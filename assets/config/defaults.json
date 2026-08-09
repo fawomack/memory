@@ -1,0 +1,8 @@
+{
+  "startGridSize": 3,
+  "maxGridSize": 6,
+  "gridIncrement": 1,
+  "revealDurationMs": 1500,
+  "initialDifficulty": "easy",
+  "allowedMistakes": 0
+}

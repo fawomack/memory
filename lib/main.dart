@@ -1,5 +1,7 @@
 // Imports
 import 'package:flutter/material.dart'; // Material widgets and theming
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'src/ui/screens/game_screen.dart';
 
 // Entry point
 void main() => runApp(const MyApp()); // Attach `MyApp` to the screen
@@ -10,12 +12,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // MaterialApp: app-wide configuration and top-level navigation
-    return MaterialApp(
-      title: 'Memory App', // OS/task title
-      theme: ThemeData(primarySwatch: Colors.blue), // App theme
-      home: const HomePage(), // Default route on startup
-    );
+      // Wrap the app with `ProviderScope` to enable Riverpod providers.
+      return ProviderScope(
+        child: MaterialApp(
+          title: 'Memory App', // OS/task title
+          theme: ThemeData(primarySwatch: Colors.blue), // App theme
+          // Show the GameScreen directly for now.
+          home: const GameScreen(),
+        ),
+      );
   }
 }
 
