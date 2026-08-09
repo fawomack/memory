@@ -6,18 +6,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../providers/game_providers.dart';
-import '../../domain/modes/fixed_rounds_mode.dart';
+import '../../domain/mode.dart';
+//import '../../domain/modes/fixed_rounds_mode.dart';
 import '../widgets/grid_widget.dart';
 import 'settings_screen.dart';
 
 // We use a FixedRoundsMode for this screen as an example.
 class GameScreen extends ConsumerWidget {
-  const GameScreen({Key? key}) : super(key: key);
+  final GameMode mode;
+
+  const GameScreen({Key? key, required this.mode}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final mode = FixedRoundsMode(rounds: 5); // example mode
-
     // Watch the engine state for this mode. UI will rebuild when state changes.
     final gameState = ref.watch(gameEngineProvider(mode));
 

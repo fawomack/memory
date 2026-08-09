@@ -1,7 +1,7 @@
 // Imports
 import 'package:flutter/material.dart'; // Material widgets and theming
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'src/ui/screens/game_screen.dart';
+import 'src/ui/screens/landing_screen.dart';
 
 // Entry point
 void main() => runApp(const MyApp()); // Attach `MyApp` to the screen
@@ -17,8 +17,8 @@ class MyApp extends StatelessWidget {
         child: MaterialApp(
           title: 'Memory App', // OS/task title
           theme: ThemeData(primarySwatch: Colors.blue), // App theme
-          // Show the GameScreen directly for now.
-          home: const GameScreen(),
+          // Show the LandingScreen by default so the user can pick mode/settings.
+          home: const LandingScreen(),
         ),
       );
   }
